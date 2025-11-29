@@ -11,7 +11,7 @@ import seaborn as sns
 # Page configuration
 st.set_page_config(
     page_title="Black-Scholes Option Pricing Model",
-    page_icon="📊",
+    page_icon="dY$",
     layout="wide",
     initial_sidebar_state="expanded")
 
@@ -122,7 +122,7 @@ class BlackScholes:
 
 # Sidebar for User Inputs
 with st.sidebar:
-    st.title("📊 Black-Scholes Model")
+    st.title("dY$ Black-Scholes Model")
     st.write("`Created by:`")
     linkedin_url = "https://www.linkedin.com/in/matthew-smithseree/"
     st.markdown(f'<a href="{linkedin_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Smithseree, Matthew Chow`</a>', unsafe_allow_html=True)
@@ -130,7 +130,7 @@ with st.sidebar:
     current_price = st.number_input("Current Asset Price", value=100.0)
     strike = st.number_input("Strike Price", value=100.0)
     time_to_maturity = st.number_input("Time to Maturity (Years)", value=1.0)
-    volatility = st.number_input("Volatility (σ)", value=0.2)
+    volatility = st.number_input("Volatility (I�)", value=0.2)
     interest_rate = st.number_input("Risk-Free Interest Rate", value=0.05)
 
     st.markdown("---")
@@ -187,7 +187,7 @@ input_data = {
     "Current Asset Price": [current_price],
     "Strike Price": [strike],
     "Time to Maturity (Years)": [time_to_maturity],
-    "Volatility (σ)": [volatility],
+    "Volatility (I�)": [volatility],
     "Risk-Free Interest Rate": [interest_rate],
 }
 input_df = pd.DataFrame(input_data)
@@ -238,3 +238,4 @@ with col2:
     st.subheader("Put Price Heatmap")
     _, heatmap_fig_put = plot_heatmap(bs_model, spot_range, vol_range, strike)
     st.pyplot(heatmap_fig_put)
+
