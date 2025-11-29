@@ -180,7 +180,7 @@ with st.sidebar:
 
 
 # Main Page for Output Display
-st.title("Black-Scholes Pricing Model")
+st.title("Black-Scholes Option Pricer")
 
 # Table of Inputs
 input_data = {
