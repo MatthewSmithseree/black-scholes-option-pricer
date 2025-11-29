@@ -145,38 +145,38 @@ with st.sidebar:
 
 
 
-def plot_heatmap(bs_model, spot_range, vol_range, strike):
-    call_prices = np.zeros((len(vol_range), len(spot_range)))
-    put_prices = np.zeros((len(vol_range), len(spot_range)))
+# def plot_heatmap(bs_model, spot_range, vol_range, strike):
+#     call_prices = np.zeros((len(vol_range), len(spot_range)))
+#     put_prices = np.zeros((len(vol_range), len(spot_range)))
     
-    for i, vol in enumerate(vol_range):
-        for j, spot in enumerate(spot_range):
-            bs_temp = BlackScholes(
-                time_to_maturity=bs_model.time_to_maturity,
-                strike=strike,
-                current_price=spot,
-                volatility=vol,
-                interest_rate=bs_model.interest_rate
-            )
-            bs_temp.calculate_prices()
-            call_prices[i, j] = bs_temp.call_price
-            put_prices[i, j] = bs_temp.put_price
+#     for i, vol in enumerate(vol_range):
+#         for j, spot in enumerate(spot_range):
+#             bs_temp = BlackScholes(
+#                 time_to_maturity=bs_model.time_to_maturity,
+#                 strike=strike,
+#                 current_price=spot,
+#                 volatility=vol,
+#                 interest_rate=bs_model.interest_rate
+#             )
+#             bs_temp.calculate_prices()
+#             call_prices[i, j] = bs_temp.call_price
+#             put_prices[i, j] = bs_temp.put_price
     
-    # Plotting Call Price Heatmap
-    fig_call, ax_call = plt.subplots(figsize=(10, 8))
-    sns.heatmap(call_prices, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2), annot=True, fmt=".2f", cmap="viridis", ax=ax_call)
-    ax_call.set_title('CALL')
-    ax_call.set_xlabel('Spot Price')
-    ax_call.set_ylabel('Volatility')
+#     # Plotting Call Price Heatmap
+#     fig_call, ax_call = plt.subplots(figsize=(10, 8))
+#     sns.heatmap(call_prices, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2), annot=True, fmt=".2f", cmap="viridis", ax=ax_call)
+#     ax_call.set_title('CALL')
+#     ax_call.set_xlabel('Spot Price')
+#     ax_call.set_ylabel('Volatility')
     
-    # Plotting Put Price Heatmap
-    fig_put, ax_put = plt.subplots(figsize=(10, 8))
-    sns.heatmap(put_prices, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2), annot=True, fmt=".2f", cmap="viridis", ax=ax_put)
-    ax_put.set_title('PUT')
-    ax_put.set_xlabel('Spot Price')
-    ax_put.set_ylabel('Volatility')
+#     # Plotting Put Price Heatmap
+#     fig_put, ax_put = plt.subplots(figsize=(10, 8))
+#     sns.heatmap(put_prices, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2), annot=True, fmt=".2f", cmap="viridis", ax=ax_put)
+#     ax_put.set_title('PUT')
+#     ax_put.set_xlabel('Spot Price')
+#     ax_put.set_ylabel('Volatility')
     
-    return fig_call, fig_put
+#     return fig_call, fig_put
 
 
 # Main Page for Output Display
@@ -229,13 +229,13 @@ st.info("Explore how option prices fluctuate with varying 'Spot Prices and Volat
 # Interactive Sliders and Heatmaps for Call and Put Options
 col1, col2 = st.columns([1,1], gap="small")
 
-with col1:
-    st.subheader("Call Price Heatmap")
-    heatmap_fig_call, _ = plot_heatmap(bs_model, spot_range, vol_range, strike)
-    st.pyplot(heatmap_fig_call)
+# with col1:
+#     st.subheader("Call Price Heatmap")
+#     heatmap_fig_call, _ = plot_heatmap(bs_model, spot_range, vol_range, strike)
+#     st.pyplot(heatmap_fig_call)
 
-with col2:
-    st.subheader("Put Price Heatmap")
-    _, heatmap_fig_put = plot_heatmap(bs_model, spot_range, vol_range, strike)
-    st.pyplot(heatmap_fig_put)
+# with col2:
+#     st.subheader("Put Price Heatmap")
+#     _, heatmap_fig_put = plot_heatmap(bs_model, spot_range, vol_range, strike)
+#     st.pyplot(heatmap_fig_put)
 
