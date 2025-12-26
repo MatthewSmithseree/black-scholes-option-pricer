@@ -3,7 +3,6 @@
 Interactive Black–Scholes option pricer built with Python and Streamlit. The app lets you:
 - Input option parameters (spot, strike, time to maturity, volatility, risk‑free rate)
 - See the resulting call and put prices
-- Explore how prices change across spot and volatility via heatmaps
 
 Main files:
 - `BlackScholes.py` – core Black–Scholes pricing logic
@@ -43,4 +42,6 @@ The app will open in your browser (or visit the URL shown in the terminal, usual
 5. Click **Deploy**.
 
 After the first build, Streamlit will give you a public URL for your live app.
+
+The URL generated should be: https://interactive-black-scholes.streamlit.app/
 
